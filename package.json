@@ -1,0 +1,24 @@
+{
+  "name": "deploy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "cdk": " node --experimental-json-modules ./node_modules/.bin/cdk",
+    "deploy": "yarn build && node --experimental-json-modules ./node_modules/.bin/cdk deploy \"**\""
+  },
+  "devDependencies": {
+    "@aws-cdk/aws-apigatewayv2-alpha": "^2.25.0-alpha.0",
+    "@serverless-stack/resources": "^1.1.2",
+    "@sls-next/lambda-at-edge": "3.8.0-alpha.0",
+    "aws-cdk-lib": "^2.25.0",
+    "cdk": "^2.25.0",
+    "next": "^12.1.6",
+    "source-map-support": "^0.5.21",
+    "ts-node": "^10.7.0"
+  },
+  "dependencies": {
+    "@sls-next/cdk-construct": "3.8.0-alpha.0"
+  }
+}
