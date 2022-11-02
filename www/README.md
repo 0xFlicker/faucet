@@ -1,6 +1,6 @@
-# Souls of Akaso D'app
+# Sepolia faucet
 
-This is the Souls of Akaso Distributed Application
+This is a faucet
 
 ## Getting Started
 
