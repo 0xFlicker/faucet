@@ -3253,13 +3253,6 @@
     node-fetch "2.6.5"
     normalize-path "3.0.0"
 
-"@souls-of-akaso/contracts@^0.0.5":
-  version "0.0.5"
-  resolved "https://npm.pkg.github.com/download/@souls-of-akaso/contracts/0.0.5/4c86522a707239f4304344cd9cff176c292e9e42aa7b21bd694ad48098b5d7bf#e464f0c280b6fd1657accb6d62df91ae5ce1179c"
-  integrity sha512-RWfvSVRQQr5QkNDNHkkcViWwnd0qPICrj7oZu2l2wUAIAiQKV/MPy/sOIi4bsrOgFwgaaOAOV782sPFuRTe4Bg==
-  dependencies:
-    ethers "^5.5.3"
-
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@szmarczak/http-timer/-/http-timer-1.1.2.tgz#b1665e2c461a2cd92f4c1bbf50d5454de0d4b421"
@@ -6239,7 +6232,7 @@ ethereumjs-vm@^2.3.4:
     rustbn.js "~0.2.0"
     safe-buffer "^5.1.1"
 
-ethers@^5.5.3, ethers@^5.6.4:
+ethers@^5.6.4:
   version "5.6.4"
   resolved "https://registry.yarnpkg.com/ethers/-/ethers-5.6.4.tgz#23629e9a7d4bc5802dfb53d4da420d738744b53c"
   integrity sha512-62UIfxAQXdf67TeeOaoOoPctm5hUlYgfd0iW3wxfj7qRYKDcvvy0f+sJ3W2/Pyx77R8dblvejA8jokj+lS+ATQ==

@@ -46,17 +46,17 @@ export class FaucetStack extends cdk.Stack {
     });
 
     // Domain
-    const domains = domain instanceof Array ? domain : [domain];
-    const domainName = domains.join(".");
-    const hostedZone = route53.HostedZone.fromLookup(this, "HostedZone", {
-      domainName: domains.length === 2 ? domains[1] : domains[0],
-    });
+    // const domains = domain instanceof Array ? domain : [domain];
+    // const domainName = domains.join(".");
+    // const hostedZone = route53.HostedZone.fromLookup(this, "HostedZone", {
+    //   domainName: domains.length === 2 ? domains[1] : domains[0],
+    // });
 
-    const certificate = new acm.DnsValidatedCertificate(this, "certificate", {
-      domainName,
-      hostedZone,
-      region: props.env?.region,
-    });
+    // const certificate = new acm.DnsValidatedCertificate(this, "certificate", {
+    //   domainName,
+    //   hostedZone,
+    //   region: props.env?.region,
+    // });
 
     const apiHandler = new lambda.Function(this, "apiHandler", {
       runtime: lambda.Runtime.NODEJS_16_X,
@@ -116,8 +116,8 @@ export class FaucetStack extends cdk.Stack {
       }
     );
     const distribution = new cloudfront.Distribution(this, "www", {
-      certificate,
-      domainNames: [domainName],
+      // certificate,
+      // domainNames: [domainName],
       priceClass: cloudfront.PriceClass.PRICE_CLASS_ALL,
       defaultBehavior: {
         origin: new origins.S3Origin(staticAssets),
@@ -184,19 +184,19 @@ export class FaucetStack extends cdk.Stack {
       },
     });
 
-    new route53.ARecord(this, "ipv4-record", {
-      zone: hostedZone,
-      recordName: domainName,
-      target: route53.RecordTarget.fromAlias(
-        new targets.CloudFrontTarget(distribution)
-      ),
-    });
-    new route53.AaaaRecord(this, "ipv6-record", {
-      zone: hostedZone,
-      recordName: domainName,
-      target: route53.RecordTarget.fromAlias(
-        new targets.CloudFrontTarget(distribution)
-      ),
-    });
+    // new route53.ARecord(this, "ipv4-record", {
+    //   zone: hostedZone,
+    //   recordName: domainName,
+    //   target: route53.RecordTarget.fromAlias(
+    //     new targets.CloudFrontTarget(distribution)
+    //   ),
+    // });
+    // new route53.AaaaRecord(this, "ipv6-record", {
+    //   zone: hostedZone,
+    //   recordName: domainName,
+    //   target: route53.RecordTarget.fromAlias(
+    //     new targets.CloudFrontTarget(distribution)
+    //   ),
+    // });
   }
 }
